@@ -1,0 +1,79 @@
+# Python cache and bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments and local environment variables
+.venv/
+venv/
+.env
+
+# IDE and OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Test, coverage, and build artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Raw and processed datasets
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Generated metadata exports
+data/metadata/*
+!data/metadata/.gitkeep
+
+# Generated embeddings
+embeddings/*
+!embeddings/.gitkeep
+
+# Generated model files and checkpoints
+models/*
+!models/.gitkeep
+*.pt
+*.pth
+*.onnx
+*.ckpt
+*.bin
+
+# Experiment outputs
+experiments/**/outputs/
+experiments/**/*.csv
+experiments/**/*.json
+experiments/**/*.npy
+experiments/**/*.npz
+!experiments/**/.gitkeep
+
+# Generated result artifacts
+results/figures/*
+!results/figures/.gitkeep
+results/tables/*
+!results/tables/.gitkeep
+results/metrics/*
+!results/metrics/.gitkeep
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+
+# Secrets and credentials
+*.pem
+*.key
+credentials.json
+token.json
+# LaTeX build artifacts
+paper/output/*
+!paper/output/main.pdf

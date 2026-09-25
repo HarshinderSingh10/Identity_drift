@@ -1,0 +1,26 @@
+# Core scientific stack
+numpy==2.4.6
+pandas==3.0.6
+opencv-python==5.0.0.93
+scikit-learn==1.9.1
+matplotlib==3.11.2
+
+# Face analysis stack
+insightface==2.0
+onnx==1.22.0
+
+# GPU ONNX Runtime stack for Windows/NVIDIA.
+# Do not install the plain `onnxruntime` CPU package in this environment; it
+# shadows the CUDA build and removes CUDAExecutionProvider from imports.
+onnxruntime-gpu[cuda,cudnn]==1.21.1
+nvidia-cuda-runtime-cu12==12.9.79
+nvidia-cudnn-cu12==9.26.0.51
+nvidia-cublas-cu12==12.9.2.10
+nvidia-cufft-cu12==11.4.1.4
+nvidia-curand-cu12==10.3.10.19
+nvidia-cuda-nvrtc-cu12==12.9.86
+nvidia-nvjitlink-cu12==12.9.86
+
+# Optional for future experiments; not required by the current InsightFace/ORT
+# embedding extractor.
+torch==2.14.0
