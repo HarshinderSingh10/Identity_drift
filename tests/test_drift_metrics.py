@@ -122,3 +122,17 @@ def test_slightly_non_normalized_embedding_outside_tolerance_returns_false() -> 
 def test_embedding_norm_and_euclidean_distance() -> None:
     assert embedding_norm([3.0, 4.0]) == pytest.approx(5.0)
     assert euclidean_distance([1.0, 2.0], [4.0, 6.0]) == pytest.approx(5.0)
+
+
+def test_batch_zero_vector_raises_value_error() -> None:
+    reference = np.array([1.0, 0.0], dtype=np.float32)
+    embeddings = np.array(
+        [
+            [1.0, 0.0],
+            [0.0, 0.0],
+        ],
+        dtype=np.float32,
+    )
+
+    with pytest.raises(ValueError, match="zero vectors"):
+        batch_cosine_similarity(reference, embeddings)
