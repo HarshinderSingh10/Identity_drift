@@ -1,0 +1,106 @@
+@import 'tailwindcss';
+
+/*
+ * Design tokens (Tailwind CSS v4, CSS-first configuration).
+ * Every token declared in @theme becomes both a CSS variable and a utility,
+ * e.g. --color-accent -> `text-accent`, `bg-accent`, `border-accent`.
+ */
+@theme {
+  /* Colour */
+  --color-page: #ffffff;
+  --color-ink: #111827;
+  --color-ink-muted: #4b5563;
+  --color-accent: #2563eb;
+  --color-accent-strong: #1d4ed8; /* hover/pressed state of the accent */
+  --color-accent-soft: #eff6ff;
+  --color-line: #e5e7eb;
+  --color-surface: #f9fafb;
+
+  /* Typography: system sans-serif stack, no external font requests */
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    'Noto Sans', sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
+
+  /* Page headings use `text-title md:text-display` to scale up on wider screens. */
+  --text-display: 2.75rem;
+  --text-display--line-height: 1.15;
+  --text-display--letter-spacing: -0.02em;
+  --text-display--font-weight: 700;
+
+  --text-title: 2rem;
+  --text-title--line-height: 1.2;
+  --text-title--letter-spacing: -0.015em;
+  --text-title--font-weight: 700;
+
+  --text-heading: 1.5rem;
+  --text-heading--line-height: 1.3;
+  --text-heading--letter-spacing: -0.01em;
+  --text-heading--font-weight: 600;
+
+  --text-subheading: 1.125rem;
+  --text-subheading--line-height: 1.4;
+  --text-subheading--font-weight: 600;
+
+  --text-lead: 1.125rem;
+  --text-lead--line-height: 1.65;
+
+  --text-body: 1rem;
+  --text-body--line-height: 1.7;
+
+  --text-label: 0.75rem;
+  --text-label--line-height: 1rem;
+  --text-label--letter-spacing: 0.08em;
+  --text-label--font-weight: 600;
+
+  --text-caption: 0.8125rem;
+  --text-caption--line-height: 1.25rem;
+
+  /* Shape and elevation */
+  --radius-control: 0.375rem;
+  --radius-card: 0.5rem;
+  --shadow-card: 0 1px 2px 0 rgb(17 24 39 / 0.05);
+
+  /* Layout */
+  --container-page: 72rem;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-page);
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-page);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Visible, consistent keyboard focus everywhere. */
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background-color: var(--color-accent-soft);
+    color: var(--color-ink);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
