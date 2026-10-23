@@ -1,0 +1,3 @@
+export type Provenance={artifact:string;dataset:string;unit:string;caveat:string};
+export type Metric={label:string;value:string;detail:string;provenance:Provenance};
+export type ResearchData={identityHistogram:{start:number;end:number;mid:number;count:number}[];split:{split:string;identities:string;images:string;pairs:string}[];ageGapDrift:{group:string;count:string;mean:string}[];verification:{research_split:string;roc_auc:string;eer:string;frozen_far:string;frozen_frr:string}[];ageGapVerification:{age_gap_group:string;n:string;mean_drift:string;acceptance_rate:string;frr:string;ci95_lower:string;ci95_upper:string}[];roc:{fpr:string;tpr:string}[]};
